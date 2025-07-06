@@ -71,26 +71,26 @@ userSchema.methods.generateAccessToken= function() {
             fullname:this.fullname
            
         },
-        process.env.REFRESH_TOKEN_SECRET,
+        process.env.ACCESS_TOKEN_SECRET,
         {
-            expiresIn:process.env.REFRESH_TOKEN_EXPITY
+            expiresIn:process.env.ACCESS_TOKEN_EXPITY || "15m",
         }
-    )
+    );
     
-}
+};
 userSchema.methods.generateRefreshToken=function(){
      return jwt.sign(
         {
             _id:this._id
            
         },
-        process.env.ACCESS_TOKEN_SECRET,
+        process.env.REFRESH_TOKEN_SECRET,
         {
-            expiresIn:process.env.ACCESS_TOKEN_EXPITY
+            expiresIn:process.env.REFRESH_TOKEN_EXPITY ||"7d",
         }
-    )
+    );
     
-}
+};
 
     
 
