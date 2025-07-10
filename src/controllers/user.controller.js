@@ -434,6 +434,7 @@ export {
     refreshAccessToken,
     changeCurrentPasword,
     getCurrentuser,
+    updateAccountDetails,
     updateUserAvatar,
     updateUserCoverImage,
     getUserChannelProfile,
